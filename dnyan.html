@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="new.css">
+  <title>Document</title>
+  <style>
+    :root{
+  --header-height:3.5rem;
+  /* color */
+  --first-color:hsl(34, 52%, 54%);
+  --first-color-light:hsl(34, 52%, 68%);
+  --first-color-lighten:hsl(34, 52%, 64%);
+  --black-color:hsl(0, 0%, 4%);
+
+  /* font and types */
+  --body-font:"Montserrat", sans-serif;
+  
+  --biggest-font-size:6rem;
+  --h3-font-size:1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+
+  /* font-weight */
+  --font-regular:400;
+  --font-semi-bold:600;
+
+  /* z-index:  */
+  --z-tooltip:10;
+  --z-fixed:100;
+  
+      --biggest-font-size:17rem;
+      --h2-font-size:1.5rem;
+      --h3-font-size: 1.25rem;
+      --normal-font-size:1rem;
+      --small-font-size: 0.813rem;
+      
+  }
+
+
+
+  </style>
+</head>
+<body>
+  <div class="head">
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Sneaker</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="" class="nav__link">Men</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="" class="nav__link">Women</a>
+                    </li>
+                    <li class="nav__item">
+                    <a href="" class="nav__link">Shoes</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="" class="nav__link">Community</a>
+                    </li>
+                </ul>
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-fill"></i>
+                </div>
+            </div>
+            <div class="nav__actions">
+                <i class="ri-heart-3-line"></i>
+                <i class="ri-shopping-cart-line"></i>
+                
+                    <!-- toggle button  -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div>
+           </div> 
+        </nav>
+    </header>
+  </div>
+
+  
+  
+</body>
+<script>
+  /*=============== SHOW MENU ===============*/
+const navMenu = document.getElementById('nav-menu'),
+navToggle = document.getElementById('nav-toggle'),
+navClose = document.getElementById('nav-close')
+
+/* Menu show */
+if(navToggle){
+navToggle.addEventListener('click', () =>{
+navMenu.classList.add('show-menu')
+})
+}
+
+/* Menu hidden */
+if(navClose){
+navClose.addEventListener('click', () =>{
+navMenu.classList.remove('show-menu')
+})
+}
+
+
+/*=============== REMOVE MENU MOBILE ===============*/
+const navLink = document.querySelectorAll('.nav__link')
+
+const linkAction = () =>{
+const navMenu = document.getElementById('nav-menu')
+// When we click on each nav__link, we remove the show-menu class
+navMenu.classList.remove('show-menu')
+}
+navLink.forEach(n => n.addEventListener('click', linkAction))
+
+
+</script>
+</html>
+
+
+
